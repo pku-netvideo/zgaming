@@ -1,6 +1,5 @@
 .vscode
 .idea
-*/results/
 __pycache__
 new_ckpt
 *.ckpt
