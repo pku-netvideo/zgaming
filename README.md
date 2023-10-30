@@ -7,11 +7,16 @@ latency in traditional cloud gaming systems. This repository is the implementati
 
 ## Foreground Prediction
 ### (0) Getting Started
-Clone this repository, enter the `'foreground'` folder and create local environment: `conda env create -f environment.yml`.
+Clone this repository, enter the `'foreground'` folder and create local environment:
+```bash
+$ conda env create -f environment.yml
+```
 ### (1) Pre-trained models
 Download the pre-trained models from [here](https://drive.google.com/drive/folders/129ftjmfHjoehxGyi6HLQszVRgVN_WBGV?usp=sharing), and place them in the `'checkpoints'` folder.
 ### (2) Dataset
-As a demo, we provide some data in the `'sample'` folder, which you can test directly. For a complete evaluation, you need to obtain the full dataset from [here](https://github.com/ZheC/GTA-IM-Dataset).
+As a demo, we provide some data in the `'sample'` folder, which you can test directly. 
+
+For a complete evaluation, you need to obtain the full dataset from [here](https://github.com/ZheC/GTA-IM-Dataset).
 ### (3) Test
 ```bash
 $ python run.py
@@ -43,3 +48,18 @@ Our prediction algorithms are built based on these three repositories:
 [MASA-SR](https://github.com/dvlab-research/MASA-SR) ![GitHub stars](https://img.shields.io/github/stars/dvlab-research/MASA-SR.svg?style=flat&label=Star)
 
 [GTA-IM-Dataset](https://github.com/ZheC/GTA-IM-Dataset) ![GitHub stars](https://img.shields.io/github/stars/ZheC/GTA-IM-Dataset.svg?style=flat&label=Star)
+
+
+## Citation
+```
+@inproceedings{wu2023zgaming,
+  title={ZGaming: Zero-Latency 3D Cloud Gaming by Image Prediction},
+  author={Wu, Jiangkai and Guan, Yu and Mao, Qi and Cui, Yong and Guo, Zongming and Zhang, Xinggong},
+  booktitle={Proceedings of the ACM SIGCOMM 2023 Conference},
+  year={2023},
+  pages={710--723},
+  numpages = {14},
+  location = {New York, NY, USA},
+  series = {ACM SIGCOMM '23}
+}
+```
