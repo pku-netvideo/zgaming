@@ -4,3 +4,4 @@ __pycache__
 new_ckpt
 *.ckpt
 *.pth
+.DS_Store
