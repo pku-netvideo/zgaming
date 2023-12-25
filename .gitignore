@@ -1,6 +1,6 @@
 .vscode
 .idea
-*/checkpoints/
-*/results/
 __pycache__
-
+new_ckpt
+*.ckpt
+*.pth
