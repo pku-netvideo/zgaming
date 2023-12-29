@@ -429,7 +429,7 @@
 
     function auto_switch_video_source() {
       var retry_in_second = document.getElementById('retry_in_second');
-      if (retry_in_second.innerText >= 0) {
+      if (retry_in_second.innerText > 0) {
         retry_in_second.innerText = retry_in_second.innerText - 1;
         setTimeout(auto_switch_video_source, 1000);
       } else if (!primary_video_source_hasLoaded) {
