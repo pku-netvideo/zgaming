@@ -427,18 +427,18 @@
       primary_video_source.style.display = 'block';
     }
 
-    function tmp() {
+    function auto_switch_video_source() {
       var retry_in_second = document.getElementById('retry_in_second');
-      if (retry_in_second.innerText > 0) {
+      if (retry_in_second.innerText >= 0) {
         retry_in_second.innerText = retry_in_second.innerText - 1;
-        setTimeout(tmp, 1000);
+        setTimeout(auto_switch_video_source, 1000);
       } else if (!primary_video_source_hasLoaded) {
         primary_video_source.style.display = 'none';
         document.getElementById('backup_video_source').style.display = 'block';
       }
     }
 
-    setTimeout(tmp, 1000);
+    setTimeout(auto_switch_video_source, 1000);
 
     // setTimeout(function() {
     //     if (!primary_video_source_hasLoaded) {
