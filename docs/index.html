@@ -1,6 +1,7 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -15,164 +16,337 @@
   <meta name="description" content="" />
   <meta name="keywords" content="">
 
-  <link href="css/bulma.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="css/splide.min.css"> -->
+
+  <style>
+    .black-frame {
+      height: 100%;
+      background: #171617;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .splide__pagination__page.is-active {
+      background: #555555;
+    }
+
+    .card {
+      margin: 10px;
+    }
+
+    .card .media-content .title,
+    .card .media-content .subtitle {
+      color: #4a4a4a;
+    }
+
+    .subtitle {
+      margin-top: -0.8rem !important;
+    }
+
+    .card-footer {
+      text-align: center;
+    }
+
+    .author {
+      font-size: 1.15rem
+    }
+
+    .author-vistec {
+      font-size: 1.3rem;
+    }
+
+    .conference-name{
+      font-size:  1.5rem;
+      padding: 12px;
+    }
+    .slider-container{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @media only screen and (min-width: 900px) {
+      .container.col-max-width {
+        max-width: 900px !important;
+      }      
+    }
+
+    @media only screen and (min-width: 681px) {
+      .vistec-offset {
+        top: -15px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .slider-container{
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .author {
+        font-size: 0.7rem
+      }
+
+      .equal-contribution {
+        font-size: 0.65rem
+      }
+
+      .author-vistec {
+        font-size: 0.8rem;
+      }
+
+      .conference-name{
+        font-size:  1rem;
+      }
+      .slider-container .card-footer-item{
+        font-size: 14px;
+      }
+    }
+
+    .shead {
+      font-size: 1.7rem;
+      margin-bottom: 0.5em !important;
+    }
+
+    .hero-body {
+      padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .bbut {
+      background-color: #739cde;
+      color: white;
+      padding: 0.5em 0.8em;
+      border-radius: 5px;
+    }
+
+    .dtitle {
+      font-size: 1.1rem;
+    }
+
+    .bbut:hover {
+      color: white !important;
+    }
+
+    .videoren .column {
+      margin: 0px;
+    }
+    .button-clipboard-tooltip{
+        display: none;
+        color:white;
+        background: rgba(74,74,74,0.9);
+        border-radius: 2px;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        text-overflow: ellipsis;
+        white-space: pre;
+    }
+
+    /* loading animation */
+    .video_loader {
+        /* border: 16px solid #f3f3f3; */
+        border: 16px solid #9d9c9c;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        animation: video_loader_spin 4s linear infinite;
+    }
+
+    @keyframes video_loader_spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <!-- <script src="assets/scripts/splide.min.js"></script> -->
 </head>
-<body>
 
-  <main class="container" style="max-width: 1000px;">
-    <!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-      <div class="col-md-12 p-lg-5 mx-auto my-1">
-        <h2 class="display-3 fw-bold my-5 fs-1">ZGaming: Zero-Latency Cloud Gaming by Image Prediction</h2>
-
-        <div class="row my-3">
-          <div class="col">
-            <p class="fw-normal mb-3 fs-4">Jiangkai Wu</p>
-            <p class="fw-normal text-muted mb-3 fs-5">Peking University</p>
+<body style="background-color: #F5F5F5; overflow-x: hidden;">
+  <section class="hero" style="background-color: white;">
+    <div class="hero-body" style="padding: 3rem 0 2rem 0;">
+      <div class="container" style="text-align: center; max-width: 950px;">
+        <h1 class="title">
+            ZGaming: Zero-Latency Cloud Gaming by Image Prediction
+        </h1>
+        <div class="columns author is-mobile">
+          <div class="column">
+            Jiangkai Wu<sup>1</sup>
           </div>
-          <div class="col">
-            <p class="fw-normal mb-3 fs-4">Yu Guan</p>
-            <p class="fw-normal text-muted mb-3 fs-5">Peking University</p>
+          <div class="column">
+            Yu Guan<sup>1</sup>
           </div>
-          <div class="col">
-            <p class="fw-normal mb-3 fs-4">Qi Mao</p>
-            <p class="fw-normal text-muted mb-3 fs-5">Communication University of China</p>
+          <div class="column">
+            Qi Mao<sup>2</sup>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p class="fw-normal mb-3 fs-4">Yong Cui</p>
-            <p class="fw-normal text-muted mb-3 fs-5">Tsinghua University</p>
-          </div>
-          <div class="col">
-            <p class="fw-normal mb-3 fs-4">Zongming Guo</p>
-            <p class="fw-normal text-muted mb-3 fs-5">Peking University</p>
-          </div><div class="col">
-            <p class="fw-normal mb-3 fs-4">Xinggong Zhang*</p>
-            <p class="fw-normal text-muted mb-1 fs-5">Peking University</p>
-            <p class="fw-normal text-muted mb-1 fs-6">zhangxg(AT)pku.edu.cn</p>
+          <div class="column">
+            Yong Cui<sup>3</sup>
           </div>
         </div>
         
-        <h6 class="mt-5 text-secondary">* indicates corresponding author</h5>
-        <h3 class="mt-3">SIGCOMM'23</h3>
-    </div> -->
-
-    <!-- cover -->
-    <!-- <section> -->
-      <div class="jumbotron text-center mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2 style="font-size:30px;">ZGaming: Zero-Latency Cloud Gaming by Image Prediction</h2>
-              <h4 style="color:#6e6e6e;">SIGCOMM'23</h4>
-              <!-- <h5 style="color:#6e6e6e;"> (Oral Presentation and Best Paper Candidate)</h5> -->
-              <hr>
-              <h6> 
-                <a href="https://www.icst.pku.edu.cn/NetVideo/people/ss/240829.htm" target="_blank">Jiangkai Wu</a><sup>1</sup>, 
-                <a href="#" target="_blank">Yu Guan</a><sup>1</sup>, 
-                <a href="#" target="_blank">Qi Mao</a><sup>2</sup>,
-                <a href="#" target="_blank">Yong Cui</a><sup>3</sup>,
-                <a href="#" target="_blank">Zongming Guo</a><sup>1</sup>
-                <a href="https://www.icst.pku.edu.cn/xinggong/" target="_blank">Xinggong Zhang</a><sup>1*</sup>
-              </h6>
-              <p class="text-secondary"> 
-                <sup>1</sup>Peking University &nbsp;&nbsp; 
-                <sup>2</sup>Communication University of China &nbsp;&nbsp; 
-                <sup>3</sup>Tsinghua University
-                <br>
-                <sup>*</sup> corresponding author [zhangxg(AT)pku.edu.cn]
-              </p>
+        <div class="columns author is-mobile">
+          <div class="column"></div>
+          <div class="column">
+            Zongming Guo<sup>1</sup>
+          </div>
+          <div class="column">
+            Xinggong Zhang<sup>1*</sup>
+          </div>
+          <div class="column"></div>
+        </div>
+        
+        <div class="author-vistec">
+          <sup>1</sup>Peking University &nbsp;&nbsp; 
+          <sup>2</sup>Communication University of China &nbsp;&nbsp; 
+          <sup>3</sup>Tsinghua University
+          <br>
+          <sup>*</sup> corresponding author [zhangxg(AT)pku.edu.cn]
+        </div>
+        <div>
+          <h2 class="title conference-name" >SIGCOMM'23</h2>
+        </div>
+        <!-- <div class="equal-contribution" style="color:#909090">
+          *equal contribution
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section class="section" style="display : flex; align-items : center;justify-content: center;padding: 10px;">
+    <div style="max-width:  900px;width: 900px;">
+      <div style="position: relative;width: 100%;height: 0;padding-bottom: 56.25%; ">
+        <!-- <iframe height="506.25" width="900"
+          style=" position: absolute;top: 0;left: 0;width: 100%;height: 100%;max-height: 100%; max-width: 100%;"
+          src="https://www.youtube.com/embed/HyfkF7Z-ddA" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe> -->
+          <div style="position: relative; max-height: 100%; max-width: 100%; display: flex; align-items: center; justify-content: center;">
+            <div style="margin: auto; width: 100%; height: 30px; text-align: center;">
+              <!-- <div class="video_loader"></div> -->
+              <h2>Video loading. Switching to Bilibili in <span id="retry_in_second">4</span> second(s)</h2>
             </div>
           </div>
+          
+          <iframe id="primary_video_source" height="506.25" width="900"
+          style=" position: absolute; top: 0;left: 0;width: 100%;height: 100%;max-height: 100%; max-width: 100%; display: hidden;"
+          src="https://www.youtube-nocookie.com/embed/_6u3Pa2UZH0?si=EOd_O8X4zhgbRipp" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
+
+          <iframe id="backup_video_source" height="506.25" width="900" 
+          style=" position: absolute; top: 0;left: 0;width: 100%;height: 100%;max-height: 100%; max-width: 100%; display: none;"
+          src="//player.bilibili.com/player.html?bvid=BV1bg4y167fr&page=1" 
+          scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container" style="max-width:900px;">
+        <h1 class="title shead">Abstract</h1>
+        <p class="abstract" style="text-align: justify;">
+          In cloud gaming, interactive latency is one of the most important factors in users' experience. Although the interactive latency can be reduced through typical network infrastructures like edge caching and congestion control, the interactive latency of current cloud-gaming platforms is still far from users' satisfaction. This paper presents ZGaming, a novel 3D cloud gaming system based on image prediction, in order to eliminate the interactive latency in traditional cloud gaming systems. To improve the quality of the predicted images, we propose (1) a quality-driven 3D-block cache to reduce the "hole" artifacts, (2) a server-assisted LSTM-predicting algorithm to improve the prediction accuracy of dynamic foreground objects, and (3) a prediction-performance-driven adaptive bitrate strategy which optimizes the quality of predicted images. The experiment on the real-world cloud gaming network conditions shows that compared with existing methods, ZGaming reduces the interactive latency from 23 ms to 0 ms when providing the same video quality, or improves the video quality by 5.4 dB when keeping the interactive latency as 0 ms.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+    <div class="sec-body">
+      <div class="container is-size-5" style="text-align: center;">
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column">
+            <a href="https://dl.acm.org/doi/10.1145/3603269.3604819" target="_blank">
+              <div>
+                <!-- <img src="imgs/paper.jpg"> -->
+                <div style="width:140px; height:140px; overflow: hidden; margin: auto;">
+                  <!-- <span id="pic-info-$i-1" class="text-light m-auto d-block" style="font-size: 40px; text-align: center; line-height: 140px;">Paper</span> -->
+                  <img src="imgs/paper.jpg">
+              </div>
+              </div>
+              Paper
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://github.com/pku-netvideo/zgaming" target="_blank">
+              <div>
+                <!-- <img src="assets/images/coding.png"> -->
+                <div style="width:140px; height:140px; overflow: hidden; margin: auto; border-radius: 50vh;">
+                  <!-- <span id="pic-info-$i-1" class="text-light m-auto d-block" style="font-size: 40px; text-align: center; line-height: 140px;">Code</span> -->
+                  <img src="imgs/code.jpg">
+              </div>
+              </div>          
+            Code
+            </a>
+          </div>
+          <div class="column"></div>
         </div>
       </div>
-    <!-- </section> -->
-
-
-    <div class="row align-items-center mb-5">
-      <div class="video-container">
-        <iframe height="auto" src="https://www.youtube-nocookie.com/embed/_6u3Pa2UZH0?si=EOd_O8X4zhgbRipp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <br />
+  </section>  
+  
+  <section class="hero">
+    <div class="hero-body">
+      <div class="col-max-width container videoren">
+        <h1 class="title shead">
+          Background Prediction
+        </h1>
+        <div class="columns">
+          <div class="column">
+            <img src="imgs/DIBR_example.png" style="max-width: 500px; margin: auto; display: flex;"/>
+            <h2 style="margin: auto; width: 100%; text-align: center;">+</h2>
+            <img class="m-auto" src="imgs/cache.png" style="max-width: 500px; margin: auto; display: flex;"/>
+          </div>
       </div>
     </div>
+  </section>
 
-    <div class="row align-items-center">
-        <img class="w-100" src="imgs/main_pic.jpg" />
+  <section class="hero">
+    <div class="hero-body">
+      <div class="col-max-width container videoren">
+        <h1 class="title shead">
+          Foreground Prediction
+        </h1>
+        <div class="columns">
+          <div class="column">
+            <img src="imgs/rnn.png" style="max-width: 500px; margin: auto; display: flex;"/>
+          </div>
+      </div>
     </div>
+  </section>
 
-
-    <div class="row my-5">
-      <h2 style="text-align: left;">Abstract</h2>
-      <p style="text-align: justify;">
-        In cloud gaming, interactive latency is one of the most important factors in users' experience. Although the interactive latency can be reduced through typical network infrastructures like edge caching and congestion control, the interactive latency of current cloud-gaming platforms is still far from users' satisfaction. This paper presents ZGaming, a novel 3D cloud gaming system based on image prediction, in order to eliminate the interactive latency in traditional cloud gaming systems. To improve the quality of the predicted images, we propose (1) a quality-driven 3D-block cache to reduce the "hole" artifacts, (2) a server-assisted LSTM-predicting algorithm to improve the prediction accuracy of dynamic foreground objects, and (3) a prediction-performance-driven adaptive bitrate strategy which optimizes the quality of predicted images. The experiment on the real-world cloud gaming network conditions shows that compared with existing methods, ZGaming reduces the interactive latency from 23 ms to 0 ms when providing the same video quality, or improves the video quality by 5.4 dB when keeping the interactive latency as 0 ms.
-      </p>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="col-max-width container videoren">
+        <h1 class="title shead">
+          Overall Performance
+        </h1>
+        <div class="columns">
+          <div class="column">
+            <img src="imgs/zerolatency_cdf.PNG" style="max-width: 500px; margin: auto; display: flex;"/>
+          </div>
+      </div>
     </div>
+  </section>
 
-    <div class="row my-5">
-      <div class="col">
-        <!-- <div class="rounded-circle bg-secondary m-auto my-3" style="width:140px; height:140px; overflow: hidden;"> -->
-        <div class="bg-secondary m-auto my-3" style="width:140px; height:140px; overflow: hidden;">
-            <!-- <span id="pic-info-$i-1" class="text-light m-auto d-block" style="font-size: 40px; text-align: center; line-height: 140px;">Paper</span> -->
-            <img src="imgs/paper.jpg">
-        </div>
-        <div class="d-flex justify-content-center">
-          <!-- <a class="btn btn-primary" href="https://dl.acm.org/doi/10.1145/3603269.3604819" role="button">Available &raquo;</a> -->
-          <a class="btn btn-primary" href="https://dl.acm.org/doi/10.1145/3603269.3604819" role="button">paper &raquo;</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      
-      <div class="col">
-        <div class="rounded-circle bg-secondary m-auto my-3" style="width:140px; height:140px; overflow: hidden;">
-            <!-- <span id="pic-info-$i-1" class="text-light m-auto d-block" style="font-size: 40px; text-align: center; line-height: 140px;">Code</span> -->
-            <img src="imgs/code.jpg">
-        </div>
-        <div class="d-flex justify-content-center">
-          <!-- <a class="btn btn-primary" href="https://github.com/pku-netvideo/zgaming" role="button">Available &raquo;</a> -->
-          <a class="btn btn-primary" href="https://github.com/pku-netvideo/zgaming" role="button">code &raquo;</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-    </div>
-
-
-    <div class="row my-5">
-      <h2 style="text-align: left;">Background Prediction</h2>
-      <img class="m-auto" src="imgs/DIBR_example.png" style="max-width: 500px;"/>
-      <h2 class="m-auto w-100 text-center">+</h2>
-      <img class="m-auto" src="imgs/cache.png" style="max-width: 500px;"/>
-    </div>
-
-    <div class="row my-5">
-      <h2 style="text-align: left;">Foreground Prediction</h2>
-      <img class="m-auto" src="imgs/rnn.png" style="max-width: 500px;"/>
-    </div>
-
-    <div class="row my-5">
-      <h2 style="text-align: left;">Overall Performance</h2>
-      <img class="m-auto" src="imgs/zerolatency_cdf.PNG" style="max-width: 500px;"/>
-    </div>
-
-    <div class="row my-5">
-      <section class="hero" style="padding-top:0px;">
-        <div class="hero-body p-0">
-          <div class="container p-0 m-0">
-            <div class="card">
-              <header class="card-header">
-                <p class="card-header-title mb-0">
-                  BibTex
-                </p>
-                <!-- <a class="card-header-icon button-clipboard" style="border:0px; background: inherit;" data-clipboard-target="#bibtex-info" > -->
-                <a class="card-header-icon button-clipboard text-decoration-none p-0" style="border:0px;" data-clipboard-target="#bibtex-info" >
-                  <div class="button-clipboard-tooltip m-0">Copied!</div>
-                  <span class="icon">
-                    <img src="imgs/copy.svg" style="height: 20px;"/>
-                  </span>
-                </a>
-              </header>
-              <div class="card-content">
-                <pre class="mb-0" style="background-color:inherit;padding: 0px; text-align: left;" id="bibtex-info">
-@inproceedings{wu2023zgaming,
+  <section class="hero" style="padding-top:0px;">
+    <div class="hero-body">
+      <div class="container" style="max-width:900px;">
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      BibTex
+    </p>
+    <a class="card-header-icon button-clipboard" style="border:0px; background: inherit;" data-clipboard-target="#bibtex-info" >
+      <div class="button-clipboard-tooltip">Copied!</div>
+      <span class="icon">
+        <img src="imgs/copy.svg" style="height: 20px;"/>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+<pre style="background-color:inherit;padding: 0px;" id="bibtex-info">@inproceedings{wu2023zgaming,
   title={ZGaming: Zero-Latency 3D Cloud Gaming by Image Prediction},
   author={Wu, Jiangkai and Guan, Yu and Mao, Qi and Cui, Yong and Guo, Zongming and Zhang, Xinggong},
   booktitle={Proceedings of the ACM SIGCOMM 2023 Conference},
@@ -182,34 +356,40 @@
   location = {New York, NY, USA},
   series = {ACM SIGCOMM '23}
 }</pre>
+  </div>
+</div>
+  </section>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container" style="max-width:900px;">
+        <div class=" col-max-width container">
+          <h1 class="title shead">
+            Another project from our lab 
+          </h1>
+
+          <a href="http://repurposegans.github.io/" target="_blank">
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    ActRay: Online Active Ray Sampling for Radiance Fields
+                  </p>
+                  <p class="card-header-icon" aria-label="more options">
+                    SIGGRAPH Asia'23
+                  </p>
+                </header>
+                <div class="card-content">
+                  <div class="content">
+                    <img src="imgs/actray-overview.jpg" />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </a>
+      </div>
+     </div>
     </div>
+  </section>
 
-    <div class="my-5">
-      <h2 style="text-align: left;">More projects from <a class="text-decoration-none" href="https://pku-netvideo.github.io/">our lab</a></h2>
-      <a class="text-decoration-none" href="https://pku-netvideo.github.io/actray/" target="_blank">
-        <div class="card">
-            <header class="card-header p-0">
-              <p class="card-header-title m-0">
-                ActRay: Online Active Ray Sampling for Radiance Fields
-              </p>
-            </header>
-            <div class="card-content">
-              <!-- <img src="imgs/actray-overview.jpg" style="max-height: 200px;"> -->
-              <img src="imgs/actray-overview.jpg">
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </main>
-
-  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/clipboard.min.js"></script>
   <script>
     var clipboard = new ClipboardJS('.button-clipboard');
@@ -225,8 +405,42 @@
       setTooltip(e.trigger, 'Copied!');
       setTimeout(function(){
         hideTooltip(e.trigger);
-      }, 1000);
+      }, 3900);
+      
     });
+    
+  </script>
+
+  <script>
+    var primary_video_source = document.getElementById('primary_video_source');
+    var primary_video_source_hasLoaded = false;
+
+    primary_video_source.onload = function() {
+      primary_video_source_hasLoaded = true;
+      primary_video_source.style.display = 'block';
+    }
+
+    function tmp() {
+      var retry_in_second = document.getElementById('retry_in_second');
+      if (retry_in_second.innerText > 0) {
+        retry_in_second.innerText = retry_in_second.innerText - 1;
+        setTimeout(tmp, 1000);
+      } else if (!primary_video_source_hasLoaded) {
+        primary_video_source.style.display = 'none';
+        document.getElementById('backup_video_source').style.display = 'block';
+      }
+    }
+
+    setTimeout(tmp, 1000);
+
+    // setTimeout(function() {
+    //     if (!primary_video_source_hasLoaded) {
+    //       primary_video_source.style.display = 'none';
+    //       document.getElementById('backup_video_source').style.display = 'block';
+    //     }
+    // }, 2000);
+
   </script>
 </body>
+
 </html>
