@@ -1,0 +1,133 @@
+/* variable define */
+:root {
+  --zoombox-scale-desktop: 1;
+  --zoombox-size-desktop: 100px;
+  --zoombox-scale-tablet: 1;
+  --zoombox-size-tablet: 100px;
+  --zoombox-scale-tablet: 1;
+  --zoombox-size-tablet: 100px;
+  --zoombox-scale-phone: 1;
+  --zoombox-size-phone: 100px;
+  --method-count: 1;
+}
+@media screen and (min-width: 1408px) {
+  :root {
+    --zoombox-scale: var(--zoombox-scale-desktop);
+    --zoombox-size: var(--zoombox-size-desktop);
+  }
+}
+@media screen and (max-width: 1407px) {
+  :root {
+    --zoombox-scale: var(--zoombox-scale-tablet);
+    --zoombox-size: var(--zoombox-size-tablet);
+  }
+}
+@media screen and (max-width: 1024px) {
+  :root {
+    --zoombox-scale: var(--zoombox-scale-phone);
+    --zoombox-size: var(--zoombox-size-phone);
+  }
+}
+
+/* hover controls */
+#controls.s0 .navbar-item:nth-child(1),
+#controls.s1 .navbar-item:nth-child(2),
+#controls.s2 .navbar-item:nth-child(3),
+#controls.s3 .navbar-item:nth-child(4),
+#controls.s4 .navbar-item:nth-child(5),
+#controls.s5 .navbar-item:nth-child(6),
+#controls.s6 .navbar-item:nth-child(7),
+#controls.s7 .navbar-item:nth-child(8),
+#controls.s8 .navbar-item:nth-child(9),
+#controls.s9 .navbar-item:nth-child(10) {
+  background: #00d1b2;
+  color: #fff;
+}
+
+/* example display */
+#examples {
+  text-align: center;
+}
+
+#examples.s1 > div > div:nth-child(1),
+#examples.s2 > div > div:nth-child(2),
+#examples.s3 > div > div:nth-child(3),
+#examples.s4 > div > div:nth-child(4),
+#examples.s5 > div > div:nth-child(5),
+#examples.s6 > div > div:nth-child(6),
+#examples.s7 > div > div:nth-child(7),
+#examples.s8 > div > div:nth-child(8),
+#examples.s9 > div > div:nth-child(9){
+  display: block;
+}
+
+.scene {
+  display: inline-block;
+  position: relative;
+  vertical-align: text-top;
+}
+
+#examples.s0 > .scene > .scene-method{
+  position: relative;
+  display: inline-block;
+  max-width: calc(100vw / var(--method-count) - 3rem);
+}
+@media screen and (max-width: 1024px) {
+  #examples.s0 > .scene > .scene-method{
+    display: block;
+    max-width: 100%;
+  }
+}
+
+#examples > div span.label {
+  display: block;
+  position: absolute;
+  color: #fff;
+  background: #000;
+  opacity: .5;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  top: 0;
+}
+.method-label {
+  right: 0;
+  padding: 0 1px 0 3px;
+}
+.scene-label {
+  left: 0;
+  padding: 0 3px 0 1px;
+}
+#examples > .scene > .scene-method{
+  display: none;
+}
+#examples > .scene > .scene-method > img {
+  max-width: 100%;
+}
+
+.zoombox{
+  display: none;
+  position: absolute;
+  bottom: 1rem; 
+  left: 1rem;
+  z-index: 10;
+  width: var(--zoombox-size); 
+  height: var(--zoombox-size);
+  border: solid white 4px;
+}
+#examples.s0 > .scene >  .scene-method > .zoombox{
+  display: block;
+}
+
+/* main interface */
+.hero .title, #control_tip{
+  text-align: center;
+}
+
+.navbar-brand{
+  flex: 1
+}
+
+#dataset-name{
+  text-decoration: underline;
+}

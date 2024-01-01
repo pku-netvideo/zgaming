@@ -17,8 +17,10 @@
   <meta name="keywords" content="">
 
 
-  <link rel="stylesheet" href="css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="css/bulma.min.css"> -->
   <!-- <link rel="stylesheet" href="css/splide.min.css"> -->
+  <link rel="stylesheet" href="scripts/bulma.min.css">
+  <link rel="stylesheet" href="scripts/splide.min.css">
 
   <style>
     .black-frame {
@@ -159,7 +161,7 @@
     }
   </style>
 
-  <!-- <script src="assets/scripts/splide.min.js"></script> -->
+  <script src="scripts/splide.min.js"></script>
 </head>
 
 <body style="background-color: #F5F5F5; overflow-x: hidden;">
@@ -205,7 +207,7 @@
           </div> -->
         </div>
 
-          <div class="columns author is-mobile">
+          <div class="columns author is-mobile" style="margin-top: -35px;" >
           <div class="column"></div>
           <div class="column">
               <a class="text-decoration-none" href="https://www.wict.pku.edu.cn/xinggong/en/">
@@ -291,9 +293,9 @@
       <div class="container" style="max-width:900px;">
         <h1 class="title shead">Abstract</h1>
         <p class="abstract" style="text-align: justify;">
-          <font size="4">
+          <!-- <font size="4"> -->
           In cloud gaming, interactive latency is one of the most important factors in users' experience. Although the interactive latency can be reduced through typical network infrastructures like edge caching and congestion control, the interactive latency of current cloud-gaming platforms is still far from users' satisfaction. This paper presents ZGaming, a novel 3D cloud gaming system based on image prediction, in order to eliminate the interactive latency in traditional cloud gaming systems. To improve the quality of the predicted images, we propose (1) a quality-driven 3D-block cache to reduce the "hole" artifacts, (2) a server-assisted LSTM-predicting algorithm to improve the prediction accuracy of dynamic foreground objects, and (3) a prediction-performance-driven adaptive bitrate strategy which optimizes the quality of predicted images. The experiment on the real-world cloud gaming network conditions shows that compared with existing methods, ZGaming reduces the interactive latency from 23 ms to 0 ms when providing the same video quality, or improves the video quality by 5.4 dB when keeping the interactive latency as 0 ms.
-          </font> 
+          <!-- </font>  -->
         </p>
       </div>
     </div>
@@ -438,7 +440,7 @@
     </div>
   </section>
 
-  <script src="js/clipboard.min.js"></script>
+  <script src="scripts/clipboard.min.js"></script>
   <script>
     var clipboard = new ClipboardJS('.button-clipboard');
     function setTooltip(){
