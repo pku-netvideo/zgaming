@@ -170,7 +170,22 @@
             ZGaming: Zero-Latency Cloud Gaming by Image Prediction
         </h1>
         <div class="columns author is-mobile">
-          <div class="column" style="margin-right: -20px; ">
+          <div class="column">
+            Jiangkai Wu<sup>1</sup>
+          </div>
+          <div class="column">
+            Yu Guan<sup>1</sup>
+          </div>
+          <div class="column">
+            Qi Mao<sup>2</sup>
+          </div>
+          <div class="column">
+            Yong Cui<sup>3</sup>
+          </div>
+          <div class="column">
+            Zongming Guo<sup>1</sup>
+          </div>
+          <!-- <div class="column" style="margin-right: -20px; ">
             Jiangkai Wu<sup>1</sup>
           </div>
           <div class="column" style="margin-right: -20px;">
@@ -184,10 +199,19 @@
           </div>
           <div class="column" style="margin-right: 0px; ">
             Zongming Guo<sup>1</sup>
-          </div>
-          <div class="column">
+          </div> -->
+          <!-- <div class="column">
             Xinggong Zhang<sup>1*</sup>
+          </div> -->
+        </div>
+
+          <div class="columns author is-mobile">
+          <div class="column"></div>
+          <div class="column">
+              <a class="text-decoration-none" href="https://www.wict.pku.edu.cn/xinggong/en/">
+              Xinggong Zhang<sup>1*</sup></a>
           </div>
+          <div class="column"></div>
         </div>
         
       <!--   <div class="columns author is-mobile">
@@ -203,11 +227,20 @@
         
         <div class="author-vistec">
           <sup>1</sup>Peking University &nbsp;&nbsp; 
-          <sup>2</sup>Communication University of China &nbsp;&nbsp; 
-          <sup>3</sup>Tsinghua University
-          <br>
+<!--           <sup>2</sup>Communication University of China &nbsp;&nbsp; 
+          <sup>3</sup>Tsinghua University -->
+          <!-- <br> -->
           <!-- <sup>*</sup> corresponding author [zhangxg(AT)pku.edu.cn] -->
         </div>
+
+         <div class="author-vistec">
+          <sup>2</sup>Communication University of China &nbsp;&nbsp; 
+        </div>
+
+         <div class="author-vistec">
+          <sup>3</sup>Tsinghua University
+        </div>
+
         <div>
           <h2 class="title conference-name" >SIGCOMM'23</h2>
         </div>
@@ -258,7 +291,9 @@
       <div class="container" style="max-width:900px;">
         <h1 class="title shead">Abstract</h1>
         <p class="abstract" style="text-align: justify;">
+          <font size="4">
           In cloud gaming, interactive latency is one of the most important factors in users' experience. Although the interactive latency can be reduced through typical network infrastructures like edge caching and congestion control, the interactive latency of current cloud-gaming platforms is still far from users' satisfaction. This paper presents ZGaming, a novel 3D cloud gaming system based on image prediction, in order to eliminate the interactive latency in traditional cloud gaming systems. To improve the quality of the predicted images, we propose (1) a quality-driven 3D-block cache to reduce the "hole" artifacts, (2) a server-assisted LSTM-predicting algorithm to improve the prediction accuracy of dynamic foreground objects, and (3) a prediction-performance-driven adaptive bitrate strategy which optimizes the quality of predicted images. The experiment on the real-world cloud gaming network conditions shows that compared with existing methods, ZGaming reduces the interactive latency from 23 ms to 0 ms when providing the same video quality, or improves the video quality by 5.4 dB when keeping the interactive latency as 0 ms.
+          </font> 
         </p>
       </div>
     </div>
